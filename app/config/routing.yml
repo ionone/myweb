@@ -1,3 +1,7 @@
+themes_bootstrap:
+    resource: "@ThemesBootstrapBundle/Resources/config/routing.xml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
