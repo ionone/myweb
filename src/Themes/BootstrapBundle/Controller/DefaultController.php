@@ -6,8 +6,14 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class DefaultController extends Controller
 {
-    public function indexAction()
+    /***
+     * @Route("/hello/{name}")
+     * @Template()
+     */
+    
+    public function indexAction($name)
     {
-        return $this->render('ThemesBootstrapBundle:Default:index.html.twig');
+        return $this->render('ThemesBootstrapBundle:Default:index.html.twig',
+                array('name'=>$name));
     }
 }

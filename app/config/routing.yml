@@ -1,6 +1,6 @@
 themes_bootstrap:
-    resource: "@ThemesBootstrapBundle/Resources/config/routing.xml"
-    prefix:   /
+    resource: "@ThemesBootstrapBundle/Resources/config/routing.yml"
+    prefix: /
 
 app:
     resource: "@AppBundle/Controller/"
