@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Entity;
+namespace League\VillageBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 

@@ -1,3 +1,7 @@
 league_village_homepage:
     path:     /
     defaults: { _controller: LeagueVillageBundle:Default:index }
+
+league_village:
+    path:     /village/{id}
+    defaults: { _controller: LeagueVillageBundle:Village:index }
