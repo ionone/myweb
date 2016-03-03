@@ -1,0 +1,4 @@
+services:
+#    league_village.example:
+#        class: League\VillageBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

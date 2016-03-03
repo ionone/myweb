@@ -1,3 +1,7 @@
+league_village:
+    resource: "@LeagueVillageBundle/Resources/config/routing.yml"
+    prefix:   /
+
 themes_bootstrap:
     resource: "@ThemesBootstrapBundle/Resources/config/routing.yml"
     prefix: /
