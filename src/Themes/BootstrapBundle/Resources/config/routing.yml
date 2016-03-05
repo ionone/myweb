@@ -1,3 +1,0 @@
-hello1:
-    path:   /hello/{name}
-    defaults: { _controller: ThemesBootstrapBundle:Default:index}

@@ -15,10 +15,11 @@ class VillageController extends Controller
             ->find($id);
         if(null === $city)
             // TODO: Crear página de error
-            return $this->render('LeagueVillageBundle:village.html.twig', array('village'=> "No encontrado"));
+            return $this->render('LeagueVillageBundle:village.html.twig', array('village'=> "No encontrado", 'description' => "No encontrado"));
         else {
-            $cityString = $city->getName();        
-            return $this->render('LeagueVillageBundle:village.html.twig', array('village'=> $cityString));
+            $cityString = $city->getName();
+            $cityDescription = $city->getDescription();
+            return $this->render('LeagueVillageBundle:village.html.twig', array('village'=> $cityString, 'description' => $cityDescription));
         }
     }
 }
