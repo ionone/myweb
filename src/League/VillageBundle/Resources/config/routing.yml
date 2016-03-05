@@ -12,4 +12,8 @@ contact_new:
     
 contact_success:
     path: /
-    defaults: { _controller: LeagueVillageBundle:Default:contact }
+    defaults: { _controller: LeagueVillageBundle:Default:response }
+    
+send_ok:
+    path: /
+    defaults: { _controller: LeagueVillageBundle:Default:send_ok }

@@ -15,16 +15,23 @@ class DefaultController extends Controller
     }
 
     public function contactAction()
-    {
-        // crea una task y le asigna algunos datos ficticios para este ejemplo
+    {       
         $frmContact = new Contact();
         $frmContact->setDate(new \DateTime('now'));
 
         $form = $this->createFormBuilder($frmContact)
-                ->add('date', 'datetime')
-                ->add('email', 'email')
-                ->add('name', 'text')
-                ->add('text', 'textarea')
+                ->add('date', 'datetime', array(                    
+                    'label' => ' ',
+                    ))
+                ->add('email', 'email', array(                    
+                    'label' => 'Correo Electrónico',
+                    ))
+                ->add('name', 'text', array(                    
+                    'label' => 'Nombre',
+                    ))
+                ->add('text', 'textarea', array(                    
+                    'label' => 'Inserte su comentario',
+                    ))
                 ->getForm();
 
         return $this->render('LeagueVillageBundle:Default:contactnew.html.twig', array(
@@ -36,15 +43,10 @@ class DefaultController extends Controller
     {
         $frmContact = new Contact();
 
-        $form = $this->createFormBuilder($frmContact)
+        $form = $this->createFormBuilder($frmContact)    
+                ->add('date', 'datetime')
+                ->add('email', 'email')
                 ->add('name', 'text')
-                ->add('date', 'datetime', array(
-                    'widget' => 'single_text',
-                    'label' => 'Fecha',
-                ))
-                ->add('email', 'email', array(
-                    'label' => 'Correo Electrónico'
-                ))
                 ->add('text', 'textarea')
                 ->getForm();
 
@@ -54,9 +56,13 @@ class DefaultController extends Controller
             if ($form->isValid()) {
                 // realiza alguna acción, tal como guardar la tarea en la base de datos
 
-                return $this->redirect($this->generateUrl('contact_success'));
+                return $this->redirect($this->generateUrl('send_ok'));
             }
         }
     }
-
+    
+    public function send_okAction()
+    {
+        return $this->render('LeagueVillageBundle:Default:send_ok.html.twig');
+    }
 }
