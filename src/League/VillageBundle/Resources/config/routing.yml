@@ -5,3 +5,11 @@ league_village_homepage:
 league_village:
     path:     /village/{id}
     defaults: { _controller: LeagueVillageBundle:Village:index }
+    
+contact_new:
+    path:   /contact
+    defaults: { _controller: LeagueVillageBundle:Default:contact }
+    
+contact_success:
+    path: /
+    defaults: { _controller: LeagueVillageBundle:Default:contact }
