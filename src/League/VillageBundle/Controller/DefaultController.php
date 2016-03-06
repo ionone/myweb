@@ -56,13 +56,8 @@ class DefaultController extends Controller
             if ($form->isValid()) {
                 // realiza alguna acción, tal como guardar la tarea en la base de datos
 
-                return $this->redirect($this->generateUrl('send_ok'));
+                return $this->render('LeagueVillageBundle:Default:send_ok.html.twig');
             }
         }
-    }
-    
-    public function send_okAction()
-    {
-        return $this->render('LeagueVillageBundle:Default:send_ok.html.twig');
-    }
+    }    
 }
