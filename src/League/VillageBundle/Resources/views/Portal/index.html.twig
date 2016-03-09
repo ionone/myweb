@@ -1,5 +1,5 @@
 {% extends '::base.html.twig' %}
-{% block title %}Portal Peña de los Pueblos Blancos{% endblock %}
+{% block title %}{% trans %}titulo_portal{% endtrans %}{% endblock %}
 {% block styleshets %}
     {{ parent() }}
     <!-- Specific (Jumbotron)-->
@@ -55,17 +55,17 @@
             <div class="col-md-4">
                 <h2>{% trans %}heading1{% endtrans %}</h2>
                 <p>{% trans %}txt_heading1{% endtrans %}</p>
-                <p><a class="btn btn-default" href="#" role="button">Acceder &raquo;</a></p>
+                <p><a class="btn btn-default" href="{{ path ('portal_village') }}" role="button">{% trans %}btn_access{% endtrans %}</a></p>
             </div>
             <div class="col-md-4">
                 <h2>{% trans %}heading2{% endtrans %}</h2>
                 <p>{% trans %}txt_heading2{% endtrans %}</p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                <p><a class="btn btn-default" href="#" role="button">{% trans %}btn_access{% endtrans %}</a></p>
             </div>
             <div class="col-md-4">
                 <h2>{% trans %}heading3{% endtrans %}</h2>
                 <p>{% trans %}txt_heading3{% endtrans %}</p>
-                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+                <p><a class="btn btn-default" href="#" role="button">{% trans %}btn_access{% endtrans %}</a></p>
             </div>
         </div>
 

@@ -7,8 +7,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class VillageController extends Controller
 {
-    public function indexAction($id)
+    public function indexAction()
     {
+        /*
         $city = new Cities();
         $city = $this->getDoctrine()
             ->getRepository('LeagueVillageBundle:Cities')
@@ -20,6 +21,7 @@ class VillageController extends Controller
             $cityString = $city->getName();
             $cityDescription = $city->getDescription();
             return $this->render('LeagueVillageBundle:village.html.twig', array('village'=> $cityString, 'description' => $cityDescription));
-        }
+        }*/
+        return $this->render('LeagueVillageBundle:village.html.twig');
     }
 }

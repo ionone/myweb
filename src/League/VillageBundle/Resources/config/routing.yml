@@ -1,13 +1,9 @@
 league_village_homepage:
     path:     /
     defaults: { _controller: LeagueVillageBundle:Default:index }
-
-league_village:
-    path:     /village/{id}
-    defaults: { _controller: LeagueVillageBundle:Village:index }
     
 contact_new:
-    path:   /contact
+    path: /contact
     defaults: { _controller: LeagueVillageBundle:Default:contact }
     
 contact_success:
@@ -17,3 +13,7 @@ contact_success:
 portal_homepage:
     path: /portal
     defaults: { _controller: LeagueVillageBundle:Portal:index }
+    
+portal_village:
+    path: /village/{page}
+    defaults: { _controller: LeagueVillageBundle:Portal:villages, page:1 }
