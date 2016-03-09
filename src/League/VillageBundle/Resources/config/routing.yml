@@ -13,3 +13,7 @@ contact_new:
 contact_success:
     path: /contact_sucess
     defaults: { _controller: LeagueVillageBundle:Default:response }
+    
+portal_homepage:
+    path: /portal
+    defaults: { _controller: LeagueVillageBundle:Portal:index }

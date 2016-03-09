@@ -1,0 +1,78 @@
+{% extends '::base.html.twig' %}
+{% block title %}Portal Peña de los Pueblos Blancos{% endblock %}
+{% block styleshets %}
+    {{ parent() }}
+    <!-- Specific (Jumbotron)-->
+    <style>
+        /* Move down content because we have a fixed navbar that is 50px tall */
+        body {
+            padding-top: 50px;
+            padding-bottom: 20px;
+        }
+    </style>
+{%endblock %}
+{% block body -%}
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header color-swatch">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <img style="float:left" src="{{ asset ('bundles/leaguevillage/img/flowRoot3016.png')}}" height="50" onclick="document.location = '{{ path('portal_homepage')}}'" />
+            </div>
+            {% if app.user %}
+            {% else %}
+            <div id="navbar" class="navbar-collapse collapse">
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <input type="text" placeholder="Email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" placeholder="Password" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-success">Sign in</button>
+                </form>
+            </div><!--/.navbar-collapse -->
+            {% endif %}
+        </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron" style="background: left top fixed no-repeat url('{{ asset ('bundles/leaguevillage/img/fondo1.jpg')}}'); background-position: 50% 50%">
+        <div class="container" >
+            <h1 class="lead">{% trans %}titulo_portal{% endtrans %}</h1>
+            <p class="lead">{% trans %}subtitulo_portal{% endtrans %}</p>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-md-4">
+                <h2>{% trans %}heading1{% endtrans %}</h2>
+                <p>{% trans %}txt_heading1{% endtrans %}</p>
+                <p><a class="btn btn-default" href="#" role="button">Acceder &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>{% trans %}heading2{% endtrans %}</h2>
+                <p>{% trans %}txt_heading2{% endtrans %}</p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div>
+            <div class="col-md-4">
+                <h2>{% trans %}heading3{% endtrans %}</h2>
+                <p>{% trans %}txt_heading3{% endtrans %}</p>
+                <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+            </div>
+        </div>
+
+        <hr>
+
+        <footer>
+            <p>&copy; 2015 Company, Inc.</p>
+        </footer>
+    </div> <!-- /container -->
+{% endblock %}
