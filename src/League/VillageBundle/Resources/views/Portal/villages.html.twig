@@ -62,32 +62,35 @@
             <div class="row featurette">
                 {% if loop.index%2 != 0 %}
                     <div class="col-md-7">
-                {% else %}
-                    <div class="col-md-7 col-md-push-5">
-                {% endif %}
-                    <h2 class="featurette-heading">{{ city.name }} <span class="text-muted"></span></h2>
-                    <p class="lead">{{ city.description }}</p>
-                </div>
-                {% if loop.index%2 != 0 %}
-                    <div class="col-md-5">
-                {% else %}
-                    <div class="col-md-5 col-md-pull-7">
-                {% endif %}
-                    <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
-                </div>
-            </div>
-            <hr class="featurette-divider">
-        {% endfor %}
-        <ul class="pagination">
-            <li><a href="#">&laquo;</a></li>
-                {% for i in 1..pagesCount %}
-                <li><a href="{{ path('portal_village', {'page': i}) }}">{{ i }}</a></li> 
+                    {% else %}
+                        <div class="col-md-7 col-md-push-5">
+                        {% endif %}
+                        <h2 class="featurette-heading">{{ city.name }} <span class="text-muted"></span></h2>
+                        <p class="lead">{{ city.description }}</p>
+                    </div>
+                    {% if loop.index%2 != 0 %}
+                        <div class="col-md-5">
+                        {% else %}
+                            <div class="col-md-5 col-md-pull-7">
+                            {% endif %}
+                            <img class="featurette-image img-responsive center-block" data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+                        </div>
+                    </div>
+                    <hr class="featurette-divider">
                 {% endfor %}
-            <li><a href="#">&raquo;</a></li>
-        </ul>
-        <!-- END THE FEATURETTES -->
-        <footer>
-            <p>&copy; 2015 Company, Inc.</p>
-        </footer>
-    </div> <!-- /container -->
-{% endblock %}
+                <ul class="pagination">
+                    <li class="disabled"><a href="#">&laquo;</a></li>
+                        {% for i in 1..pagesCount %}
+                            {% set classValue = "" %}
+                            {% if loop.index == currentPag %}
+                                {% set classValue = 'active' %}
+                            {% endif %}
+                        <li class="{{classValue}}"><a href="{{ path('portal_village', {'page': i}) }}">{{ i }}</a></li>
+                        {% endfor %}
+                    <li class="disabled"><a href="#">&raquo;</a></li>
+                </ul>
+                <footer>
+                    <p>&copy; 2015 Company, Inc.</p>
+                </footer>
+            </div> <!-- /container -->
+        {% endblock %}

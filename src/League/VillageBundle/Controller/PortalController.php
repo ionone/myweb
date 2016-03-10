@@ -51,10 +51,7 @@ class PortalController extends Controller
                 array(), //criteria
                 array('name' => 'ASC'), //order
                 $pageSize, // limit
-                ($page * $pageSize - $pageSize)); // first
-        //($pageSize,$page);
-        
-
+                ($page * $pageSize - $pageSize)); // first        
         //Renderizamos la vista
         return $this->render('LeagueVillageBundle:Portal:villages.html.twig', array(
                     "cities" => $paginator,
